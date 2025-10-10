@@ -1,4 +1,4 @@
-<h3 align="center">A passionate full stack developer from Iowa</h3>
+<h3 align="left">A passionate full stack developer from Iowa</h3>
 
 - 🔭 I’m currently working on **finding a job :o)**
 
