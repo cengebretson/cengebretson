@@ -1,33 +1,33 @@
-import { writeFileSync, readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 interface Quote {
-  quote: string;
-  author: string;
+	quote: string;
+	author: string;
 }
 
 // Function to convert an image to a Base64 data URI
 function imageToBase64(filePath: string): string {
-  const fileContent = readFileSync(filePath);
-  const base64 = fileContent.toString("base64");
-  const extension = filePath.split(".").pop();
-  return `data:image/${extension};base64,${base64}`;
+	const fileContent = readFileSync(filePath);
+	const base64 = fileContent.toString("base64");
+	const extension = filePath.split(".").pop();
+	return `data:image/${extension};base64,${base64}`;
 }
 
 // Function to read file and convert to json object
 function readJsonFile(filePath: string): Quote[] {
-  const fileContent = readFileSync(filePath);
-  const quotes: Quote[] = JSON.parse(fileContent.toString());
-  return quotes;
+	const fileContent = readFileSync(filePath);
+	const quotes: Quote[] = JSON.parse(fileContent.toString());
+	return quotes;
 }
 
 // Function to load quotes from file
 function loadQuotes(filePath: string): Quote[] {
-  try {
-    return readJsonFile(filePath);
-  } catch (error) {
-    console.error("Error reading or parsing quotes.json:", error);
-  }
-  return [{ quote: "Where ever you go, there you are", author: "me" }];
+	try {
+		return readJsonFile(filePath);
+	} catch (error) {
+		console.error("Error reading or parsing quotes.json:", error);
+	}
+	return [{ quote: "Where ever you go, there you are", author: "me" }];
 }
 
 // get random quote
@@ -91,8 +91,8 @@ const svgContent = `
 
 // Write the SVG content to a file
 try {
-  writeFileSync("quote-with-image.svg", svgContent.trim());
-  console.log("Successfully created quote-with-image.svg");
+	writeFileSync("quote-with-image.svg", svgContent.trim());
+	console.log("Successfully created quote-with-image.svg");
 } catch (error) {
-  console.error("Error writing SVG file:", error);
+	console.error("Error writing SVG file:", error);
 }
