@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
+// quote format
 interface Quote {
 	quote: string;
 	author: string;
@@ -33,8 +34,8 @@ function loadQuotes(filePath: string): Quote[] {
 // get random quote
 const quotes = loadQuotes("./assets/quotes.json");
 const randomIndex = Math.floor(Math.random() * quotes.length);
-const quoteText = quotes[randomIndex]!.quote;
-const authorText = quotes[randomIndex]!.author;
+const quoteText = quotes[randomIndex]?.quote;
+const authorText = quotes[randomIndex]?.author;
 
 // images to use
 const imageDark = "./assets/iroh_dark.png";
