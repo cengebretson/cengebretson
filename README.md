@@ -1,9 +1,5 @@
 <img src="./quote-with-image.svg">
 
-<style>
-a { text-decoration:none; padding-left: 15px }
-</style>
-
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/chris-engebretson/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="cengebretson" height="30" width="40" /></a><a href="https://instagram.com/captain__boring/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="captain__boring/" height="30" width="40" /></a>

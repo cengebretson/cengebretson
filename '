@@ -34,16 +34,14 @@ function loadQuotes(filePath: string): Quote[] {
 // get random quote
 const quotes = loadQuotes("./src/assets/quotes.json");
 const randomIndex = Math.floor(Math.random() * quotes.length);
-let quoteText = quotes[randomIndex]?.quote ?? "";
+let quoteText = quotes[randomIndex]?.quote;
 const authorText = quotes[randomIndex]?.author;
 
 // split quote if too long
-let quoteText2: string = "";
-const spaceIndex: number =
-	quoteText?.length > 80 ? quoteText.indexOf(" ", 80) : -1;
-if (spaceIndex !== -1) {
-	quoteText2 = quoteText.substring(spaceIndex);
-	quoteText = quoteText.substring(0, spaceIndex);
+let quoteText2 : string = ""; 
+if ((var firstSpaceIndex = quoteText?.indexOf(' ', 80)) != -1) {
+  quoteText2 = quoteText?.substring(firstSpaceIndex);
+  quoteText = quoteText.substring(0, firstSpaceIndex)
 }
 
 // images to use
@@ -82,10 +80,10 @@ const svgContent = `
 
     <!-- Quote block - use tspans for manual line breaks / wrapping -->
     <text class="quote" x="0" y="20">
-      <tspan x="0" dy="0">${quoteText}</tspan>
-      <tspan x="0" dy="1.5em">${quoteText2}</tspan> 
+      <tspan x="0" dy="0" xml:space="preserve">${quoteText}</tspan>
+      <tspan x="0" dy="1.5">${quoteText2}</tspan> 
       <!-- Author -->
-      <tspan class="author" x="0" dy="2.5em">— ${authorText}</tspan>
+      <tspan class="author" x="0" dy="2.2em">— ${authorText}</tspan>
     </text>
 
   </g>
