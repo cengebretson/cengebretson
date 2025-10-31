@@ -90,7 +90,7 @@ const svgContent = `
 
   </g>
   <!-- Decorative separator line -->
-  <line x1="190" y1="30" x2="200" y2="170" stroke="#e6eef6" stroke-width="1" opacity="0.5"/>
+  <line x1="190" y1="30" x2="190" y2="170" stroke="#e6eef6" stroke-width="1" opacity="0.2"/>
 
 </svg>
 `;
