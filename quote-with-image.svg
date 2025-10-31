@@ -11,7 +11,7 @@
       .author { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; fill: #aaaaaa; font-weight: 600; }
       .vertLine { stroke: #e6eef6 } 
 
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: light) {
         .imageDark { display: none }
         .imageLight { display: inline }
         .quote { fill: #555555 }
@@ -36,8 +36,8 @@
 
     <!-- Quote block - use tspans for manual line breaks / wrapping -->
     <text class="quote" x="0" y="20">
-      <tspan x="0" dy="0">Sometimes life is like this dark tunnel. You can't always see the light at the end</tspan>
-      <tspan x="0" dy="1.5em"> of the tunnel, but if you just keep moving... you will come to a better place.</tspan> 
+      <tspan x="0" dy="0">Pride is not the opposite of shame, but its source. True humility is the antidote</tspan>
+      <tspan x="0" dy="1.5em"> to shame.</tspan> 
       <!-- Author -->
       <tspan class="author" x="0" dy="2.5em">— Uncle Iroh</tspan>
     </text>
