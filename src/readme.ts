@@ -61,10 +61,21 @@ const svgContent = `
      width="900" height="200" viewBox="0 0 900 200" role="img" aria-label="Banner with image and quote">
   <defs>
     <style>
+      .imageDa6rk { display: inline }
+      .imageLight { display: none }
       .bg { fill: none; }
       .card { rx: 14; ry: 14; }
       .quote { white-space: "pre", font-family: "Helvetica Neue", Arial, sans-serif; font-size: 20px; fill: #cccccc; font-weight: 500; }
       .author { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; fill: #aaaaaa; font-weight: 600; }
+      .vertLine { stroke: #e6eef6 } 
+
+      @media (prefers-color-scheme: light) {
+        .imageDark { display: none }
+        .imageLight { display: inline }
+        .quote { fill: #555555 }
+        .author { fill: #333333 }
+        .vertLine { stroke: #232323 } 
+      }
     </style>
   </defs>
 
@@ -74,11 +85,12 @@ const svgContent = `
   <!-- Left image area (embedded base64 image) -->
   <g transform="translate(30,20)">
     <!-- Base64-embedded SVG image (example avatar) -->
-    <image width="160" height="160" href="${imageDataUriDark}"/>
+    <image class="imageDark" width="160" height="160" href="${imageDataUriDark}"/>
+    <image class="imageLight" width="160" height="160" href="${imageDataUriLight}"/>
   </g>
 
   <!-- Right text area -->
-  <g transform="translate(210,36)">
+  <g transform="translate(225,36)">
 
     <!-- Quote block - use tspans for manual line breaks / wrapping -->
     <text class="quote" x="0" y="20">
@@ -89,8 +101,9 @@ const svgContent = `
     </text>
 
   </g>
+
   <!-- Decorative separator line -->
-  <line x1="190" y1="30" x2="190" y2="170" stroke="#e6eef6" stroke-width="1" opacity="0.2"/>
+  <line class="vertLine" x1="200" y1="30" x2="200" y2="170" stroke-width="1" opacity="0.2"/>
 
 </svg>
 `;
