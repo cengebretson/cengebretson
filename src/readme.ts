@@ -31,20 +31,35 @@ function loadQuotes(filePath: string): Quote[] {
 	return [{ quote: "Where ever you go, there you are", author: "me" }];
 }
 
+function renderQuoteTspan(quote: string): string {
+	const quoteLines: string[] = [];
+
+	const appendLine = (line: string) => {
+		const dy: string = quoteLines.length === 0 ? "0" : "1.3em";
+		const tspan = `<tspan x="0" dy="${dy}">${line}</tspan>\n`;
+		quoteLines.push(tspan);
+	};
+
+	while (quote.length > 80) {
+		const spaceIndex: number = quoteText.indexOf(" ", 80);
+		if (spaceIndex !== -1) {
+			const line = quote.substring(0, spaceIndex);
+			appendLine(line);
+			quote = quote.substring(spaceIndex + 1);
+		} else {
+			break;
+		}
+	}
+
+	appendLine(quote);
+	return quoteLines.join("");
+}
+
 // get random quote
 const quotes = loadQuotes("./src/assets/quotes.json");
 const randomIndex = Math.floor(Math.random() * quotes.length);
-let quoteText = quotes[randomIndex]?.quote ?? "";
+const quoteText = quotes[randomIndex]?.quote ?? "";
 const authorText = quotes[randomIndex]?.author;
-
-// split quote if too long
-let quoteText2: string = "";
-const spaceIndex: number =
-	quoteText?.length > 80 ? quoteText.indexOf(" ", 80) : -1;
-if (spaceIndex !== -1) {
-	quoteText2 = quoteText.substring(spaceIndex);
-	quoteText = quoteText.substring(0, spaceIndex);
-}
 
 // images to use
 const imageDark = "./src/assets/iroh_dark.png";
@@ -94,8 +109,7 @@ const svgContent = `
 
     <!-- Quote block - use tspans for manual line breaks / wrapping -->
     <text class="quote" x="0" y="20">
-      <tspan x="0" dy="0">${quoteText}</tspan>
-      <tspan x="0" dy="1.5em">${quoteText2}</tspan> 
+      ${renderQuoteTspan(quoteText)}
       <!-- Author -->
       <tspan class="author" x="0" dy="2.5em">— ${authorText}</tspan>
     </text>

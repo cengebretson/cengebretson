@@ -36,8 +36,9 @@
 
     <!-- Quote block - use tspans for manual line breaks / wrapping -->
     <text class="quote" x="0" y="20">
-      <tspan x="0" dy="0">Pride is not the opposite of shame, but its source. True humility is the antidote</tspan>
-      <tspan x="0" dy="1.5em"> to shame.</tspan> 
+      <tspan x="0" dy="0">You will find that if you look for the light, you can often find it. but if you look</tspan>
+<tspan x="0" dy="1.3em">for the dark, that is all you will ever see.</tspan>
+
       <!-- Author -->
       <tspan class="author" x="0" dy="2.5em">— Uncle Iroh</tspan>
     </text>
