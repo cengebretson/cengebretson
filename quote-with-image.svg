@@ -36,7 +36,7 @@
 
     <!-- Quote block - use tspans for manual line breaks / wrapping -->
     <text class="quote" x="0" y="20">
-      <tspan x="0" dy="0">Good times become good memories, but bad times become good lessons.</tspan>
+      <tspan x="0" dy="0">Life happens wherever you are, whether you make it or not.</tspan>
       <!-- Author -->
       <tspan class="author" x="0" dy="2.5em">— Uncle Iroh</tspan>
     </text>
