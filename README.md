@@ -1,1 +1,1 @@
-<img src="./quote-with-image.svg">
+<img alt="uncle iroah" src="./quote-with-image.svg">
